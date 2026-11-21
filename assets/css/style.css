@@ -346,6 +346,8 @@ main > h2:not(.section-title) { font-size: 1.3rem; border-left: 5px solid var(--
 .site-footer { margin-top: 80px; padding: 36px 0 44px; text-align: center; color: var(--muted); font-size: 0.85rem; }
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .footer-inner::before { content: "· · ·"; color: var(--accent); letter-spacing: 0.6em; margin-bottom: 8px; }
+.footer-updated { font-size: 0.8rem; color: var(--muted); }
+.footer-updated time { font-variant-numeric: tabular-nums; }
 .footer-links a { margin: 0 8px; color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1.05rem; }
 .footer-links a:hover { color: var(--accent); }
 
@@ -364,30 +366,6 @@ main > h2:not(.section-title) { font-size: 1.3rem; border-left: 5px solid var(--
   .highlight .nf, .highlight .fm { color: #cdb3f0; }
   .highlight .nc, .highlight .nn, .highlight .nv, .highlight .vi { color: #93c9e3; }
 }
-
-/* ===== 寿司ページ ===== */
-.sushi-hero {
-  background:
-    radial-gradient(circle, rgba(255,255,255,.6) 1.5px, transparent 1.6px) 0 0 / 18px 18px,
-    linear-gradient(135deg, #f7c9d4 0%, #fbe3d3 55%, #f6e6dc 100%);
-}
-.sushi-grid { columns: 2 340px; column-gap: 24px; }
-.sushi-card {
-  break-inside: avoid; margin: 0 0 24px; padding: 14px 14px 10px;
-  background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-}
-.sushi-card .instagram-media, .sushi-card .twitter-tweet {
-  margin: 0 auto !important; min-width: 0 !important; width: 100% !important; max-width: 100% !important;
-}
-.sushi-card blockquote { border: 0; padding: 24px; text-align: center; background: var(--bg); border-radius: 14px; }
-.sushi-card figcaption {
-  text-align: center; font-size: 0.9rem; color: var(--accent-deep); padding: 10px 6px 4px;
-}
-.sushi-card figcaption::before { content: "— "; color: var(--accent); }
-.sushi-card figcaption::after { content: " —"; color: var(--accent); }
-.sushi-more { text-align: center; margin-top: 56px; }
-.sushi-more p { color: var(--muted); margin: -12px 0 18px; }
 
 /* ===== PC表示：幅を広げる＋左右のレース飾り ===== */
 @media (min-width: 1024px) {

@@ -1,5 +1,6 @@
 <footer class="site-footer">
   <div class="container footer-inner">
+    <span class="footer-updated">最終更新：<time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y年%-m月%-d日 %H:%M' }}</time></span>
     <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
     <span class="footer-links">
       {% if site.author.github and site.author.github != "" %}

@@ -72,6 +72,19 @@
       url: https://vcc.docs.vrchat.com/
       desc: VCCのドキュメント
 
+- category: Blender
+  description: 3DCG・モデリング
+  links:
+    - name: Blender マニュアル
+      url: https://docs.blender.org/manual/ja/latest/
+      desc: 公式マニュアル（日本語）
+    - name: Blender ダウンロード
+      url: https://www.blender.org/download/
+      desc: 最新版のダウンロード
+    - name: Blender Python API
+      url: https://docs.blender.org/api/current/
+      desc: スクリプト・アドオン開発のリファレンス
+
 - category: Web
   description: HTML・CSS・JavaScript
   links:
