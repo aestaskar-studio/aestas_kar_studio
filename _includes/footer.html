@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
+    <span class="footer-links">
+      {% if site.author.github and site.author.github != "" %}
+        <a href="https://github.com/{{ site.author.github }}">GitHub</a>
+      {% endif %}
+      {% if site.author.x and site.author.x != "" %}
+        <a href="https://x.com/{{ site.author.x }}">X</a>
+      {% endif %}
+    </span>
+  </div>
+</footer>

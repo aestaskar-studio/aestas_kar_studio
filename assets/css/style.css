@@ -1,0 +1,135 @@
+/* ===== カラー（ライト / ダーク自動切り替え） ===== */
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #656d76;
+  --border: #d8dee4;
+  --accent: #0969da;
+  --code-bg: #f6f8fa;
+  --tag-bg: #ddf4ff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8d96a0;
+    --border: #30363d;
+    --accent: #4493f8;
+    --code-bg: #161b22;
+    --tag-bg: #12263f;
+  }
+}
+
+/* ===== ベース ===== */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main { flex: 1; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== ヘッダー / フッター ===== */
+.site-header { border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+.header-inner {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 8px; padding-top: 16px; padding-bottom: 16px;
+}
+.site-title { font-weight: 700; font-size: 1.2rem; color: var(--fg); }
+.site-nav a { margin-left: 18px; color: var(--muted); font-size: 0.95rem; }
+.site-nav a:first-child { margin-left: 0; }
+.site-nav a:hover { color: var(--fg); }
+
+.site-footer { border-top: 1px solid var(--border); margin-top: 64px; color: var(--muted); font-size: 0.875rem; }
+.footer-inner { display: flex; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
+.footer-links a { margin-left: 14px; color: var(--muted); }
+
+/* ===== トップページ ===== */
+.intro h1 { font-size: 1.8rem; margin: 0 0 4px; }
+.intro p { color: var(--muted); margin: 0 0 32px; }
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-list li { padding: 22px 0; border-bottom: 1px solid var(--border); }
+.post-list li:first-child { border-top: 1px solid var(--border); }
+.post-link { font-size: 1.25rem; font-weight: 700; color: var(--fg); line-height: 1.5; }
+.excerpt { margin: 6px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+/* ===== 記事メタ / タグ ===== */
+.post-meta { color: var(--muted); font-size: 0.875rem; margin-top: 4px; }
+.tags { margin-left: 8px; }
+.tag {
+  display: inline-block; background: var(--tag-bg); color: var(--accent);
+  border-radius: 999px; padding: 0 10px; margin: 2px 4px 2px 0; font-size: 0.8rem;
+}
+.tag:hover { text-decoration: none; opacity: 0.8; }
+.tag-cloud { margin-bottom: 32px; }
+.tag-section ul { list-style: none; padding: 0; }
+.tag-section time { color: var(--muted); font-size: 0.875rem; margin-right: 10px; font-variant-numeric: tabular-nums; }
+
+/* ===== 記事本文 ===== */
+.post-header { margin-bottom: 32px; }
+.post-header h1 { font-size: 2rem; line-height: 1.4; margin: 0 0 8px; }
+.post-content h2 { font-size: 1.45rem; margin: 2.2em 0 0.6em; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.post-content h3 { font-size: 1.2rem; margin: 1.8em 0 0.5em; }
+.post-content img { max-width: 100%; height: auto; border-radius: 6px; }
+.post-content blockquote {
+  margin: 1.2em 0; padding: 0 1em; color: var(--muted); border-left: 4px solid var(--border);
+}
+.post-content table { border-collapse: collapse; width: 100%; margin: 1.2em 0; font-size: 0.95rem; display: block; overflow-x: auto; }
+.post-content th, .post-content td { border: 1px solid var(--border); padding: 6px 12px; text-align: left; }
+.post-content th { background: var(--code-bg); }
+.post-content ul.task-list, .post-content .task-list-item { list-style: none; }
+.post-content .task-list-item input { margin-right: 6px; }
+
+/* コード */
+code, pre { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 0.875em; }
+:not(pre) > code { background: var(--code-bg); border: 1px solid var(--border); border-radius: 4px; padding: 0.1em 0.4em; }
+div.highlighter-rouge, pre.highlight {
+  background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px;
+}
+pre.highlight { margin: 0; padding: 14px 16px; overflow-x: auto; line-height: 1.6; border: 0; }
+div.highlighter-rouge { margin: 1.2em 0; }
+
+.post-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.95rem; }
+.post-nav .next { text-align: right; margin-left: auto; }
+
+.not-found { text-align: center; padding: 60px 0; }
+.not-found h1 { font-size: 4rem; margin: 0; }
+
+/* ===== シンタックスハイライト（Rouge） ===== */
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs { color: #6e7781; font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kr, .highlight .kc, .highlight .kt { color: #cf222e; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sh, .highlight .si { color: #0a3069; }
+.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh { color: #0550ae; }
+.highlight .nf, .highlight .fm { color: #8250df; }
+.highlight .nc, .highlight .nn { color: #953800; }
+.highlight .nb, .highlight .bp { color: #0550ae; }
+.highlight .o, .highlight .ow { color: #cf222e; }
+.highlight .nv, .highlight .vi { color: #953800; }
+@media (prefers-color-scheme: dark) {
+  .highlight .c, .highlight .c1, .highlight .cm, .highlight .cs { color: #8b949e; }
+  .highlight .k, .highlight .kd, .highlight .kn, .highlight .kr, .highlight .kc, .highlight .kt, .highlight .o, .highlight .ow { color: #ff7b72; }
+  .highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sh, .highlight .si { color: #a5d6ff; }
+  .highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .nb, .highlight .bp { color: #79c0ff; }
+  .highlight .nf, .highlight .fm { color: #d2a8ff; }
+  .highlight .nc, .highlight .nn, .highlight .nv, .highlight .vi { color: #ffa657; }
+}
+
+/* ===== スマホ ===== */
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  .post-header h1 { font-size: 1.6rem; }
+  .site-nav a { margin-left: 12px; }
+  .footer-inner { flex-direction: column; gap: 4px; }
+  .footer-links a { margin-left: 0; margin-right: 14px; }
+}

@@ -1,0 +1,41 @@
+# ===== ここを自分の情報に書き換えてください =====
+title: "Tech Notes"                     # ブログ名
+description: "日々の開発で学んだことを書き残す技術ブログ"
+author:
+  name: "あなたの名前"                  # 表示名
+  github: "aestaskar-studio"            # GitHubのユーザー名（@なし）
+  x: ""                                 # X(Twitter)のID（不要なら空のまま）
+
+# 公開URL: https://aestaskar-studio.github.io/aestas_kar_studio/
+url: "https://aestaskar-studio.github.io"
+baseurl: "/aestas_kar_studio"   # リポジトリ名を aestaskar-studio.github.io にした場合は "" にする
+# ================================================
+
+lang: ja
+timezone: Asia/Tokyo
+permalink: /posts/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# GitHub Pagesで標準サポートされているプラグイン
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

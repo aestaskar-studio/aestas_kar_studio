@@ -1,0 +1,13 @@
+{% assign words = include.post.content | strip_html | size %}
+{% assign minutes = words | divided_by: 500 | plus: 1 %}
+<div class="post-meta">
+  <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: '%Y年%-m月%-d日' }}</time>
+  <span>・約{{ minutes }}分で読めます</span>
+  {% if include.post.tags.size > 0 %}
+    <span class="tags">
+      {% for tag in include.post.tags %}
+        <a class="tag" href="{{ '/tags/' | relative_url }}#{{ tag | slugify: 'raw' }}">#{{ tag }}</a>
+      {% endfor %}
+    </span>
+  {% endif %}
+</div>
