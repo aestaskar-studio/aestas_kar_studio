@@ -1,0 +1,83 @@
+# 参考リンク集のデータ
+# カテゴリ（ツール）を増やすときは「- category:」のブロックを追加します。
+# ヘッダーの「Links」にカーソルを合わせると、ここのカテゴリがメニューに並びます。
+#
+# - category: カテゴリ名
+#   description: メニューに出る一言説明
+#   links:
+#     - name: リンク名
+#       url: https://...
+#       desc: 一言メモ（省略可）
+
+- category: GitHub
+  description: リポジトリ・Pages・Actions
+  links:
+    - name: GitHub Docs
+      url: https://docs.github.com/ja
+      desc: GitHub公式ドキュメント（日本語）
+    - name: GitHub Pages
+      url: https://docs.github.com/ja/pages
+      desc: Pagesでのサイト公開
+    - name: GitHub CLI マニュアル
+      url: https://cli.github.com/manual/
+      desc: gh コマンドのリファレンス
+
+- category: Jekyll
+  description: このブログの仕組み
+  links:
+    - name: Jekyll Docs
+      url: https://jekyllrb.com/docs/
+      desc: 公式ドキュメント
+    - name: Liquid
+      url: https://shopify.github.io/liquid/
+      desc: テンプレート言語のリファレンス
+
+- category: Markdown
+  description: 記事の書き方
+  links:
+    - name: GitHub Flavored Markdown
+      url: https://github.github.com/gfm/
+      desc: GFMの仕様
+    - name: kramdown
+      url: https://kramdown.gettalong.org/syntax.html
+      desc: Jekyllが使うMarkdown変換の書式
+
+- category: VS Code
+  description: エディタ
+  links:
+    - name: VS Code Docs
+      url: https://code.visualstudio.com/docs
+      desc: 公式ドキュメント
+    - name: キーボードショートカット
+      url: https://code.visualstudio.com/docs/getstarted/keybindings
+      desc: ショートカット一覧
+
+- category: Unity
+  description: ゲームエンジン
+  links:
+    - name: Unity マニュアル
+      url: https://docs.unity3d.com/ja/current/Manual/index.html
+      desc: 公式マニュアル（日本語）
+    - name: スクリプトリファレンス
+      url: https://docs.unity3d.com/ja/current/ScriptReference/index.html
+      desc: C# APIリファレンス
+
+- category: VRChat
+  description: ワールド・アバター制作
+  links:
+    - name: VRChat Creator Docs
+      url: https://creators.vrchat.com/
+      desc: 公式クリエイター向けドキュメント
+    - name: VRChat Creator Companion
+      url: https://vcc.docs.vrchat.com/
+      desc: VCCのドキュメント
+
+- category: Web
+  description: HTML・CSS・JavaScript
+  links:
+    - name: MDN Web Docs
+      url: https://developer.mozilla.org/ja/
+      desc: Web技術のリファレンス
+    - name: Can I use
+      url: https://caniuse.com/
+      desc: ブラウザ対応状況の確認

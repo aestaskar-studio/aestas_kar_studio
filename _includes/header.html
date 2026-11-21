@@ -4,7 +4,21 @@
     <nav class="site-nav">
       <a href="{{ '/' | relative_url }}">Journal</a>
       <a href="{{ '/tags/' | relative_url }}">Tags</a>
-      <a href="{{ '/about/' | relative_url }}">About</a>
+      <div class="nav-item has-menu">
+        <a href="{{ '/links/' | relative_url }}" aria-haspopup="true">Links</a>
+        <div class="mega-menu" role="menu">
+          <div class="mega-inner">
+            {% for group in site.data.links %}
+              <a class="mega-item" role="menuitem" href="{{ '/links/' | relative_url }}#{{ group.category | slugify: 'raw' }}">
+                <span class="mega-title">{{ group.category }}</span>
+                <span class="mega-desc">{{ group.description }}</span>
+              </a>
+            {% endfor %}
+          </div>
+          <a class="mega-all" href="{{ '/links/' | relative_url }}">すべてのリンクを見る →</a>
+        </div>
+      </div>
+      <a href="{{ '/about/' | relative_url }}">Profile</a>
       <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
     </nav>
   </div>

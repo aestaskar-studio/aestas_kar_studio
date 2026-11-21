@@ -49,7 +49,7 @@ body {
 main { flex: 1; }
 a { color: var(--accent-deep); text-decoration: none; transition: color .2s, opacity .2s; }
 a:hover { color: var(--accent); }
-.container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+.container { width: 100%; max-width: 880px; margin: 0 auto; padding: 0 20px; }
 ::selection { background: var(--accent-soft); }
 
 /* ===== ヘッダー ===== */
@@ -234,6 +234,114 @@ main > h2:not(.section-title) { font-size: 1.3rem; border-left: 5px solid var(--
 .not-found { text-align: center; padding: 60px 0; }
 .not-found h1 { font-family: var(--serif); font-style: italic; font-size: 5rem; color: var(--accent); margin: 0; }
 
+/* ===== Links メガメニュー ===== */
+.site-nav { align-items: center; }
+.nav-item { position: relative; display: inline-block; }
+.has-menu > a::after { content: " ▾"; font-style: normal; font-size: 0.7em; opacity: .7; }
+.mega-menu {
+  position: absolute; top: 100%; left: 50%;
+  transform: translate(-50%, 8px);
+  width: min(720px, 92vw);
+  padding: 14px 20px 18px;
+  margin-top: 10px;
+  background: var(--surface);
+  border-radius: 22px;
+  box-shadow: 0 16px 48px rgba(160, 100, 110, 0.22);
+  border: 1px solid var(--border);
+  opacity: 0; visibility: hidden;
+  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+  z-index: 50;
+  text-align: left;
+}
+/* カーソルが本体からメニューへ移る間に閉じないための透明な橋 */
+.mega-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -22px; height: 22px; }
+/* 上向きの小さな三角 */
+.mega-menu::after {
+  content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%) rotate(45deg);
+  width: 14px; height: 14px; background: var(--surface);
+  border-left: 1px solid var(--border); border-top: 1px solid var(--border);
+}
+.has-menu:hover .mega-menu,
+.has-menu:focus-within .mega-menu,
+.mega-menu.is-open {
+  opacity: 1; visibility: visible; transform: translate(-50%, 0);
+}
+.mega-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+}
+.site-nav .mega-item {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 12px 16px; border-radius: 14px;
+  font-family: var(--font); font-style: normal; font-size: 1rem; color: var(--fg);
+  transition: background .2s;
+}
+.site-nav .mega-item:hover { background: var(--accent-soft); color: var(--fg); }
+.mega-title { font-weight: 700; color: var(--accent-deep); line-height: 1.5; }
+.mega-title::before { content: "● "; font-size: 0.6em; vertical-align: middle; color: var(--accent); }
+.mega-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+.site-nav .mega-all {
+  display: block; text-align: right; margin-top: 8px; padding: 4px 8px 0;
+  border-top: 1px dashed var(--border); border-radius: 0;
+  font-size: 1rem;
+}
+.site-nav .mega-all:hover { background: none; color: var(--accent); }
+
+/* ===== 参考リンク集ページ ===== */
+.links-jump { text-align: center; margin: -8px 0 36px; }
+.links-jump .tag { font-size: 0.9rem; padding: 2px 14px; }
+.link-group { margin-bottom: 44px; scroll-margin-top: 24px; }
+.link-group h2 {
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  font-size: 1.3rem; margin: 0 0 16px; padding-left: 14px; border-left: 5px solid var(--accent);
+}
+.link-group h2 small { font-size: 0.82rem; font-weight: 400; color: var(--muted); }
+.link-cards {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px;
+}
+.link-cards a {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--surface); border-radius: 16px; padding: 16px 20px;
+  box-shadow: var(--shadow); border: 1px solid transparent;
+  transition: transform .2s, border-color .2s;
+}
+.link-cards a:hover { transform: translateY(-3px); border-color: var(--accent); }
+.link-name { font-weight: 700; color: var(--fg); }
+.link-name::after { content: " ↗"; color: var(--accent); font-size: 0.85em; }
+.link-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-top: 2px; }
+
+/* ===== プロフィール ===== */
+.profile-card {
+  text-align: center; background: var(--surface); border-radius: 28px; box-shadow: var(--shadow);
+  padding: 48px 24px 40px; margin-bottom: 24px; position: relative; overflow: hidden;
+}
+.profile-card::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 110px;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.55) 1.5px, transparent 1.6px) 0 0 / 18px 18px,
+    linear-gradient(135deg, #f9d9e2 0%, #f6e6dc 100%);
+}
+.profile-avatar {
+  position: relative; width: 112px; height: 112px; margin: 30px auto 14px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--accent) 0%, #f2b8a2 100%);
+  color: #fff; font-family: var(--serif); font-style: italic; font-size: 3.4rem; line-height: 1;
+  border: 5px solid var(--surface); box-shadow: 0 6px 18px rgba(200, 110, 130, .3);
+}
+.profile-name { font-size: 1.7rem; margin: 0; letter-spacing: 0.05em; }
+.profile-bio { color: var(--muted); margin: 6px 0 22px; }
+.profile-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.profile-btn {
+  display: inline-block; padding: 8px 24px; border-radius: 999px;
+  background: var(--accent); color: #fff; font-weight: 700; font-size: 0.92rem;
+  border: 2px solid var(--accent); transition: opacity .2s, background .2s, color .2s;
+}
+.profile-btn:hover { color: #fff; opacity: .85; }
+.profile-btn.outline { background: transparent; color: var(--accent-deep); }
+.profile-btn.outline:hover { background: var(--accent); color: #fff; opacity: 1; }
+
 /* ===== フッター ===== */
 .site-footer { margin-top: 80px; padding: 36px 0 44px; text-align: center; color: var(--muted); font-size: 0.85rem; }
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 6px; }
@@ -269,4 +377,5 @@ main > h2:not(.section-title) { font-size: 1.3rem; border-left: 5px solid var(--
   .post { padding: 32px 22px; border-radius: 22px; }
   .post-header h1 { font-size: 1.5rem; }
   .post-content table { display: block; overflow-x: auto; }
+  .mega-menu { display: none; }   /* スマホはタップでリンク集ページへ */
 }

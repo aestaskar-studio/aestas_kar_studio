@@ -1,10 +1,10 @@
 # ===== ここを自分の情報に書き換えてください =====
-title: "Tech Notes"                     # ブログ名
+title: "aestas note"                    # ブログ名
 description: "日々の開発で学んだことを書き残す技術ブログ"
 author:
-  name: "あなたの名前"                  # 表示名
+  name: "aestas_kar"                    # 表示名
   github: "aestaskar-studio"            # GitHubのユーザー名（@なし）
-  x: ""                                 # X(Twitter)のID（不要なら空のまま）
+  x: "aestas_vrc"                       # X(Twitter)のID（不要なら空のまま）
 
 # 公開URL: https://aestaskar-studio.github.io/aestas_kar_studio/
 url: "https://aestaskar-studio.github.io"

@@ -1,20 +1,33 @@
 ---
 layout: default
-title: About
+title: Profile
 permalink: /about/
 ---
 
-# About
+<section class="profile-card">
+  <div class="profile-avatar" aria-hidden="true">a</div>
+  <h1 class="profile-name">{{ site.author.name }}</h1>
+  <p class="profile-bio">
+    <!-- ここに一言自己紹介を書いてください -->
+    {{ site.description }}
+  </p>
+  <div class="profile-links">
+    <a class="profile-btn" href="https://x.com/{{ site.author.x }}" target="_blank" rel="noopener">X @{{ site.author.x }}</a>
+    <a class="profile-btn outline" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
 
-<!-- ここを自分の紹介に書き換えてください -->
+<!-- 下の項目は自由に書き換え・削除してください -->
 
-ソフトウェアエンジニアです。このブログでは、仕事や個人開発で学んだことを書いています。
+## About me
 
-## よく触る技術
+ここに自己紹介を書きます（例：やっていること、好きなもの、このブログで書きたいこと）。
 
-- （例：言語やフレームワークを書く）
-- （例：インフラやツールを書く）
+## Skills
 
-## リンク
+- （例：よく使う言語やツール）
+- （例：最近触っている技術）
 
-- GitHub: [{{ site.author.github }}](https://github.com/{{ site.author.github }})
+## Contact
+
+ご連絡は [X @{{ site.author.x }}](https://x.com/{{ site.author.x }}) までどうぞ。

@@ -1,0 +1,28 @@
+---
+layout: default
+title: 参考リンク集
+permalink: /links/
+---
+<h1>参考リンク集</h1>
+
+<p class="links-jump">
+  {% for group in site.data.links %}
+    <a class="tag" href="#{{ group.category | slugify: 'raw' }}">{{ group.category }}</a>
+  {% endfor %}
+</p>
+
+{% for group in site.data.links %}
+  <section class="link-group" id="{{ group.category | slugify: 'raw' }}">
+    <h2><span>{{ group.category }}</span><small>{{ group.description }}</small></h2>
+    <ul class="link-cards">
+      {% for link in group.links %}
+        <li>
+          <a href="{{ link.url }}" target="_blank" rel="noopener">
+            <span class="link-name">{{ link.name }}</span>
+            {% if link.desc %}<span class="link-desc">{{ link.desc }}</span>{% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endfor %}
