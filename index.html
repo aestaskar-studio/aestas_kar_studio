@@ -1,14 +1,17 @@
 ---
 layout: default
 ---
-<section class="intro">
+<section class="hero">
+  <p class="hero-label">Welcome</p>
   <h1>{{ site.title }}</h1>
   <p>{{ site.description }}</p>
 </section>
 
+<h2 class="section-title"><span>Latest Posts</span></h2>
+
 <ul class="post-list">
   {% for post in site.posts %}
-    <li>
+    <li class="post-card">
       <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
       {% include post-meta.html post=post %}
       {% if post.description %}
@@ -16,6 +19,7 @@ layout: default
       {% else %}
         <p class="excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
       {% endif %}
+      <a class="read-more" href="{{ post.url | relative_url }}">Read more</a>
     </li>
   {% endfor %}
 </ul>
